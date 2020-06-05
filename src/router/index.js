@@ -169,7 +169,7 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'https://github.com/kuhami/vue-admin',
+        path: 'https://github.com/kuhami/vue-admin/',
         meta: { title: 'Github', icon: 'link' }
       }
     ]
