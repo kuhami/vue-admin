@@ -165,12 +165,12 @@ export const constantRoutes = [
   },
 
   {
-    path: 'external-link',
+    path: 'Github',
     component: Layout,
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'https://github.com/kuhami/vue-admin',
+        meta: { title: 'Github', icon: 'link' }
       }
     ]
   },
