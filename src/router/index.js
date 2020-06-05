@@ -158,6 +158,7 @@ export const constantRoutes = [
       {
         path: 'menu2',
         component: () => import('@/views/nested/menu2/index'),
+        name: 'menu2',
         meta: { title: 'menu2' }
       }
     ]
