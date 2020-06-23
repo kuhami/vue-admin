@@ -75,7 +75,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    meta: { title: '组件', icon: 'example' },
     children: [
       {
         path: 'table',
@@ -95,6 +95,7 @@ export const constantRoutes = [
   {
     path: '/form',
     component: Layout,
+    hidden: false,
     children: [
       {
         path: 'index',
@@ -110,6 +111,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/nested/menu1',
     name: 'Nested',
+    hidden: false,
     meta: {
       title: 'Nested',
       icon: 'nested'
@@ -163,7 +165,45 @@ export const constantRoutes = [
       }
     ]
   },
-
+  //Vue
+  {
+    path: '/vue',
+    component: Layout,
+    redirect: '/vue/pages01',
+    name: 'Vue',
+    meta: { title: 'Vue经典面试题', icon: 'example' },
+    children: [
+      {
+        path: 'index',
+        name: 'Table',
+        component: () => import('@/views/vue/index'),
+        meta: { title: 'Vue经典面试题' }
+      },
+      {
+        path: 'edit/:id(\\d+)',
+        name: 'Table',
+        component: () => import('@/views/vue/edit'),
+        meta: { title: '答案' },
+        hidden: true
+      }
+    ]
+  },
+  //React
+  {
+    path: '/react',
+    component: Layout,
+    redirect: '/react/table',
+    name: 'React',
+    meta: { title: 'React经典面试题', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/react/index'),
+        meta: { title: 'React经典面试题' }
+      }
+    ]
+  },
   {
     path: 'Github',
     component: Layout,
