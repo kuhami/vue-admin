@@ -51,7 +51,7 @@
       :title="title"
       :visible.sync="dialogVisible"
       center>
-      <p v-for="item in messageArr" :key="item">{{item}}</p>
+      <div v-html="message"></div>
       <span slot="footer" class="dialog-footer">
         <el-button type="primary" @click="dialogVisible = false">关 闭</el-button>
       </span>
@@ -80,7 +80,7 @@
         listLoading: true,
         title: '',
         dialogVisible: false,
-        messageArr: []
+        message:''
       }
     },
     created() {
@@ -95,10 +95,9 @@
         })
       },
       handleClick(row) {
-        const messageArr = row.message.split(';')
         this.dialogVisible = true;
         this.title = `答案-${row.id}`
-        this.messageArr = messageArr;
+        this.message = row.message;
       }
     }
   }
