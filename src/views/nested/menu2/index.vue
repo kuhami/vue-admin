@@ -16,6 +16,13 @@
 
       <!--<template #header>我是新的header001</template>-->
     </slot-name>
+    <br>
+    <div>指令</div>
+    <span v-text="msg"></span>
+    <div v-html="html"></div>
+    <span v-pre>{{ this will not be compiled }}</span>
+
+    <input type="text" v-on="{ input:onInput,focus:onFocus,blur:onBlur, }">
   </div>
 </template>
 
@@ -31,13 +38,29 @@
     },
     data() {
       return {
+        msg: 'v-text',
+        html: '<span style="color: red;">v-html</span>',
         nameList: [
           { id: 1, name: '孙悟空' },
           { id: 2, name: '猪八戒' },
           { id: 3, name: '沙和尚' },
           { id: 4, name: '唐僧' },
           { id: 5, name: '小白龙' }
-        ],
+        ]
+      }
+    },
+    created(){
+
+    },
+    methods: {
+      onInput() {
+        console.log('onInput')
+      },
+      onFocus() {
+        console.log('onFocus')
+      },
+      onBlur() {
+        console.log('onBlur')
       }
     }
   }
