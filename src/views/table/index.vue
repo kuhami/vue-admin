@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import { getList } from '@/api/table'
+import { getList, getTableList } from '@/api/table'
 
 export default {
   filters: {
@@ -64,7 +64,8 @@ export default {
     }
   },
   created() {
-    this.fetchData()
+    // this.fetchData()
+    this.fetchDataList({shopId: '292269'})
   },
   methods: {
     fetchData() {
@@ -73,7 +74,12 @@ export default {
         this.list = response.data.items
         this.listLoading = false
       })
-    }
+    },
+    async fetchDataList(params) {
+      getTableList(params).then(response => {
+        console.info('====>',response)
+      })
+    },
   }
 }
 </script>

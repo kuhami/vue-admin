@@ -7,3 +7,12 @@ export function getList(params) {
     params
   })
 }
+
+export function getTableList(params) {
+  const { shopId } = params
+  return request({
+    url: `/posapi/shop/${shopId}-103/shopdeviceapi/device/list`,
+    method: 'post',
+    data: {},
+  })
+}
